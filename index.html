@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.scss">
-    <script src="index.js"></script>
 </head>
 <body>
-    <h1>Kaspar Martin Suursalu is cool</h1>
+    <div id="app">
+        <input type="text" v-model="message">
+        {{ message }}
+        <button v-on:click="empty">Click me</button>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>
