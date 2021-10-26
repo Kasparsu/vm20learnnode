@@ -9,8 +9,18 @@
 <body>
     <div id="app">
         <input type="text" v-model="message">
-        {{ message }}
-        <button v-on:click="empty">Click me</button>
+        {{ message.substr(0,3) }}<br>
+        {{ reverseMessage }}
+        <br>
+        <button @click="empty">Click me</button>
+        <br>
+        <button @click="clicks++">Click this</button>
+        You have clicked {{ clicks }} times!<br>
+        <input type="text" v-model="newItem">
+        <button @click="items.push(newItem)">Add Item</button>
+        <ul>
+            <li v-for="item in items">{{item}}</li>
+        </ul>
     </div>
     <script src="index.js"></script>
 </body>
