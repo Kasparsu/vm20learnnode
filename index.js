@@ -1,14 +1,18 @@
 import Vue from 'vue/dist/vue.common.dev';
 
+import ItemList from './ItemList.vue';
+
+Vue.component('item-list', ItemList);
+
 new Vue({
     el: "#app",
     data: {
         message: "hello vue!",
         clicks: 0,
         items: [
-            {name:"Piim", isDone: false},
-            {name:"Viin", isDone: true},
-            {name:"Happukurk", isDone: false},
+            {name:"Piim", isDone: false, id: 0},
+            {name:"Viin", isDone: true, id: 1},
+            {name:"Happukurk", isDone: false, id: 2},
         ],
         newItem: ''
     },
@@ -18,7 +22,7 @@ new Vue({
         },
         addItem(){
             if(this.newItem.trim() != '') {
-                this.items.push({name:this.newItem, isDone:false});
+                this.items.push({name:this.newItem, isDone:false, id: this.items.length});
             }
             this.newItem = '';
         }
@@ -29,6 +33,9 @@ new Vue({
         },
         doneItems(){
             return this.items.filter(item => item.isDone);
+        },
+        notDoneItems(){
+            return this.items.filter(item => !item.isDone);
         }
     }
 });

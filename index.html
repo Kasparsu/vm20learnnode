@@ -10,18 +10,11 @@
     <div id="app">
         <input type="text" v-model="newItem" @keyup.enter="addItem">
         <button @click="addItem">Add Item</button>
-        <ul>
-            <li v-for="item in items">
-                <input type="checkbox" v-model="item.isDone">
-                {{item.name}}
-            </li>
-        </ul>
-        <ul>
-            <li v-for="item in items">
-                <input type="checkbox" v-model="item.isDone">
-                {{item.name}}
-            </li>
-        </ul>
+
+        <item-list :items="items" title="All Items"></item-list>
+        <item-list :items="doneItems" title="Done Items"></item-list>
+        <item-list :items="notDoneItems" title="Not Done Items"></item-list>
+
     </div>
     <script src="index.js"></script>
 </body>
