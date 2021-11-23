@@ -1,9 +1,9 @@
 import Vue from 'vue/dist/vue.common.dev';
 
 import ItemList from './ItemList.vue';
-
+import App from './App.vue';
 Vue.component('item-list', ItemList);
-
+Vue.component('app', App);
 new Vue({
     el: "#app",
     data: {
